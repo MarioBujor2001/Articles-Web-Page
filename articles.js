@@ -173,7 +173,11 @@ function activatePage(page) {
 }
 
 // createArticle();
-getArticles();
+//checking page number
+var page = 1;
+activatePage(page);
+document.getElementById('current-page').innerHTML = `Current page: ${page}`;
+getArticles(null, page, 5);
 getUsers();
 
 //filtering feature
@@ -185,8 +189,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 });
 
-//checking page number
-var page = 1;
 pagination.addEventListener('click', (e) => {
     e.preventDefault();
     //remove all active classes
